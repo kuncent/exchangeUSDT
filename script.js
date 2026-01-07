@@ -144,7 +144,7 @@ function updateRates() {
     // 根据当前选中的菜单项设置不同的汇率
     let rates;
     switch (activeSidebarLink.textContent) {
-        case '骇客盗取':
+        case '駭客盜取':
             rates = [1.20, 1.30, 1.40];
             break;
         case '電閘網閘':
@@ -217,7 +217,7 @@ function initSidebarMenuSwitching() {
             if (addressElement) {
                 let newAddress;
                 switch (link.textContent) {
-                    case '骇客盗取':
+                    case '駭客盜取':
                         newAddress = 'TRFTScdiWtK31A982srPm3dRe6AUvHp3qD';
                         break;
                     case '電閘網閘':
