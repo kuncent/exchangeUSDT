@@ -220,7 +220,7 @@ function initSidebarMenuSwitching() {
                     case '骇客盗取':
                         newAddress = 'TRFTScdiWtK31A982srPm3dRe6AUvHp3qD';
                         break;
-                    case '电闸网闸':
+                    case '電閘網閘':
                         newAddress = 'TGCy2MqKpGBvc7gAnFkiSVo8Rb5qKFsJTu';
                         break;
                     case '菠菜色播':
