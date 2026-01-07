@@ -476,16 +476,6 @@ function initFormSubmission() {
     }
 }
 
-// 语言切换功能（暂时注释，因为DOM中没有对应的元素）
-// function initLanguageSwitching() {
-//     languageSelect.addEventListener('change', (e) => {
-//         const selectedLang = e.target.value;
-//         // 这里可以添加语言切换的具体逻辑
-//         console.log(`切换到语言: ${selectedLang}`);
-//         // 模拟语言切换效果
-//         alert(`已切换到${selectedLang}语言`);
-//     });
-// }
 
 // 公告横幅点击事件 - 显示/隐藏悬浮说明框
 function initAnnouncementClick() {
@@ -610,13 +600,13 @@ function generateNewOrder() {
 function startAutoGenerateOrders() {
     function generateNextOrder() {
         generateNewOrder();
-        // 随机0-20秒后生成下一条
-        const randomDelay = Math.floor(Math.random() * 20000);
+        // 随机0-10秒后生成下一条
+        const randomDelay = Math.floor(Math.random() * 10000);
         setTimeout(generateNextOrder, randomDelay);
     }
     
     // 等待随机时间后开始生成，而不是立即生成
-    const initialDelay = Math.floor(Math.random() * 20000);
+    const initialDelay = Math.floor(Math.random() * 10000);
     setTimeout(generateNextOrder, initialDelay);
 }
 
