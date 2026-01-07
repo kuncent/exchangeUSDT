@@ -147,7 +147,7 @@ function updateRates() {
         case '骇客盗取':
             rates = [1.20, 1.30, 1.40];
             break;
-        case '电闸网闸':
+        case '電閘網閘':
             rates = [1.15, 1.20, 1.25];
             break;
         case '菠菜色播':
