@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>黑U兌換_USDT混幣器_白U混幣服務_黑U凍結包賠</title>
+    <meta name="description" content="專業USDT混幣器服務，提供黑U兌換、白U混合、黑U處理等服務，保證黑U凍結包賠，安全可靠，快速到賬。">
+    <meta name="keywords" content="黑U兌換, USDT混幣器, 白U, 黑U, 黑U處理, 黑USDT兌換, 混幣器, 加密貨幣混幣">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部导航 -->
+        <header class="top-header">
+            <div class="header-left">
+                <div class="logo">
+                    <span>四年老牌USDT混幣器</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 公告横幅 -->
+        <div class="announcement-banner">
+            <i class="fas fa-bullhorn"></i>
+            <span>🔥🔥點我查看新手必看教程🔥🔥</span>
+        </div>
+        
+        <!-- 全局遮罩层 -->
+        <div class="tooltip-backdrop"></div>
+        
+        <!-- 悬浮说明框 -->
+        <div class="announcement-tooltip">
+            <h4>新手必看教程</h4>
+            <p class="tip-title">歡迎使用USDT混幣器！</p>
+            <ol>
+                <li>灰黑色產業獲得大量的USDT，但是會被泰達公司標記為黑U，不能直接進入交易所交易，有被凍結的風險。</li>
+                <li>此時需要將該冷錢包的黑U和白U混合，以達到黑U佔比低於20%的比例，這樣就可以躲過交易所的凍結風險，順利從交易所出金。</li>
+                <li>不同的灰黑產，被凍結的風險不一樣，所以參與混幣獲得的回報也不相同，選擇具體的項目就能看到不同的回報。</li>
+                <li>每天會有4-5個項目需要混幣，黑U比例降到20%項目就會下架，先到先得。</li>
+                <li>選擇灰黑產項目，獲得對應的混幣器地址，轉入訂單提交的USDT數量，靜待5-10分鐘。</li>
+                <li>混幣器收到您轉的USDT後會執行智能合約，獲取到您的轉幣地址，將對應的轉入和回報代幣一起返回到您的錢包地址。</li>
+                <li>此時完成混幣，獲得雙贏。</li>
+            </ol>
+            <button class="close-tooltip">關閉</button>
+        </div>
+        
+        <!-- 自定义提示框 -->
+        <div class="custom-alert" id="customAlert">
+            <div class="alert-content">
+                <div class="alert-icon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <div class="alert-message" id="alertMessage"></div>
+                <div class="alert-buttons">
+                    <button class="btn btn-primary" id="alertConfirm">確定</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主要内容区域 -->
+        <main class="main-content">
+            <!-- 左侧菜单 -->
+            <aside class="left-sidebar">
+                <div class="sidebar-menu">
+                    <h3>項目中心</h3>
+                    <ul>
+                        <li><a href="#dashboard" class="active">骇客盗取</a></li>
+                        <li><a href="#orders">电闸网闸</a></li>
+                        <li><a href="#withdraw">菠菜色播</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- 中间内容 -->
+            <section class="center-content">
+                <!-- 自助下单区域 -->
+                <div class="order-section">
+                    <h2>自助下單</h2>
+                    <div class="order-card">
+                        <div class="order-header">
+                            <h3>骇客盗取</h3>
+                            <div class="current-rate">
+                                
+                                
+                                <!-- 币池地址 -->
+                                <div class="pool-address">
+                                    <span>币池地址：</span>
+                                    <div class="address-container">
+                                        <span class="adress-value" id="current-adress">TRFTScdiWtK31A982srPm3dRe6AUvHp3qD</span>
+                                        <button class="copy-address-btn" id="copy-address-btn">复制</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-info">
+                            <h4>計算公式：</h4>
+                            <!-- 汇率信息卡片 -->
+                                <div class="rate-info-cards">
+                                    <div class="rate-card">
+                                        <h3 class="rate-title">20-199USDT</h3>
+                                        <div class="rate-value">匯率1.10</div>
+                                        <div class="rate-example">
+                                            <p>假設您下單50USDT</p>
+                                            <p>50 × 1.1 = 55</p>
+                                            <p>您將收到55USDT</p>
+                                        </div>
+                                    </div>
+                                    <div class="rate-card">
+                                        <h3 class="rate-title">200-1000USDT</h3>
+                                        <div class="rate-value">匯率1.20</div>
+                                        <div class="rate-example">
+                                            <p>假設您下單200USDT</p>
+                                            <p>200 × 1.20 = 240</p>
+                                            <p>您將收到240USDT</p>
+                                        </div>
+                                    </div>
+                                    <div class="rate-card">
+                                        <h3 class="rate-title">1000USDT以上</h3>
+                                        <div class="rate-value">匯率1.30</div>
+                                        <div class="rate-example">
+                                            <p>假設您下單500USDT</p>
+                                            <p>500 × 1.3 = 650</p>
+                                            <p>您將收到650USDT</p>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="order-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>转入：</label>
+                                    <div class="input-group">
+                                        <input type="number" id="buy-amount" placeholder="0.00" step="0.01" min="0">
+                                    </div>
+                                </div>
+                                
+                                <div class="exchange-arrow">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>你將收到：</label>
+                                    <div class="input-group">
+                                        <input type="number" id="receive-amount" placeholder="0.00" step="0.01" readonly>
+                                        <span class="currency">USDT</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button class="btn btn-primary btn-large" id="submit-order">申请订单</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- 订单记录区域 -->
+                <div class="order-records">
+                    <div class="records-tabs">
+                        <button class="tab-btn active" data-tab="current">當前下發記錄</button>
+                        <button class="tab-btn" data-tab="history">歷史下發記錄</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="current">
+                        <div class="records-table-container">
+                            <table class="records-table">
+                                <thead>
+                                    <tr>
+                                        <th>訂單號</th>
+                                        <th>转入金額</th>
+                                        <th>收到金額</th>
+                                        <th>狀態</th>
+                                        <th>時間</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="current-records">
+                                    <!-- 當前記錄將通過JS動態生成 -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="history">
+                        <div class="records-table-container">
+                            <table class="records-table">
+                                <thead>
+                                    <tr>
+                                        <th>訂單號</th>
+                                        <th>转入金額</th>
+                                        <th>收到金額</th>
+                                        <th>狀態</th>
+                                        <th>時間</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="history-records">
+                                    <!-- 歷史記錄將通過JS動態生成 -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 右侧边栏 -->
+            <aside class="right-sidebar">
+                <!-- 下单流程 -->
+                <div class="process-card">
+                    <h3>自助下單流程</h3>
+                    <ol class="process-list">
+                        <li>选择项目</li>
+                        <li>输入转入金额</li>
+                        <li>点击申请定单</li>
+                        <li>复制币池地址</li>
+                        <li>向币池地址转入申请订单对应的USDT数量（数量保持一致）</li>
+                        <li>等待5-10分钟完成收币</li>
+                    </ol>
+                </div>
+                <!-- 代理特权 -->
+                <div class="privilege-card">
+                    <h3>代理專享特權</h3>
+                    <ul class="privilege-list">
+                        <li><i class="fas fa-check"></i> 單筆下單5000USDT免費</li>
+                        <li><i class="fas fa-check"></i> 加入代理尊享匯率1.5起</li>
+                        <li><i class="fas fa-check"></i> 代理免費開通分站</li>
+                        <li><i class="fas fa-check"></i> 自行開拓市場</li>
+                        <li><i class="fas fa-check"></i> 10分鐘內下發</li>
+                        <li><i class="fas fa-check"></i> 24小時客服支持</li>
+                    </ul>
+                </div>
+                
+                
+                
+                <!-- 客服信息 -->
+                <div class="support-card">
+                    <h3>客服中心</h3>
+                    <div class="support-item">
+                        <i class="fas fa-headset"></i>
+                        <span>Tg客服：USDTsupport</span>
+                    </div>
+                    <div class="support-item">
+                        <i class="fas fa-clock"></i>
+                        <span>24/7 全天候服務</span>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>關於我們</h3>
+                    <p>四年老牌USDT混幣器，專業提供黑U兌換、白U混幣服務，黑U凍結包賠。安全可靠，快速到賬，值得信賴的混幣服務平台。</p>
+                </div>
+                <div class="footer-contact">
+                    <h3>聯繫方式</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>fixusdt@usdt-exchange.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+532 84516 859</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 USDT混幣器. 黑U兌換_白U混幣服務_保留所有權利.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
