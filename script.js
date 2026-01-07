@@ -336,7 +336,7 @@ function initAddressDisplay() {
                     .then(() => {
                         // 复制成功，添加临时提示
                         const originalText = copyButton.textContent;
-                        copyButton.textContent = '已复制';
+                        copyButton.textContent = '已複製';
                         copyButton.style.background = 'linear-gradient(90deg, #28a745, #20c997)';
                         
                         // 2秒后恢复原状态
@@ -531,7 +531,7 @@ function renderOrders() {
     const currentOrdersContainer = document.getElementById('current-records');
     const historyOrdersContainer = document.getElementById('history-records');
     
-    // 渲染当前下发记录（处理中状态），最多显示10条
+    // 渲染当前下发记录（處理中状态），最多显示10条
     const currentOrders = allOrders.filter(order => order.status === '處理中').slice(0, 10);
     currentOrdersContainer.innerHTML = currentOrders.map(order => `
         <tr>
@@ -562,14 +562,14 @@ function generateNewOrder() {
     // 插入到数组开头
     allOrders.unshift(newOrder);
     
-    // 检查当前下发记录数量
-    const currentOrders = allOrders.filter(order => order.status === '处理中');
+    // 检查当前下发记录数量，使用正确的繁体中文状态
+    const currentOrders = allOrders.filter(order => order.status === '處理中');
     if (currentOrders.length > MAX_CURRENT_ORDERS) {
         // 将最老的当前记录转为历史记录
         // 先找到所有当前记录，然后将最后一条转为历史记录
         const currentOrderIndices = [];
         for (let i = 0; i < allOrders.length; i++) {
-            if (allOrders[i].status === '处理中') {
+            if (allOrders[i].status === '處理中') {
                 currentOrderIndices.push(i);
             }
         }
@@ -578,10 +578,12 @@ function generateNewOrder() {
         if (currentOrderIndices.length > MAX_CURRENT_ORDERS) {
             // 最老的当前记录是currentOrderIndices数组中的最后一个元素
             const oldestCurrentOrderIndex = currentOrderIndices[currentOrderIndices.length - 1];
+            // 获取最老的当前记录
+            const oldestCurrentOrder = allOrders[oldestCurrentOrderIndex];
             // 将状态改为已完成
-            allOrders[oldestCurrentOrderIndex].status = '已完成';
+            oldestCurrentOrder.status = '已完成';
             // 更新时间为当前时间
-            allOrders[oldestCurrentOrderIndex].time = new Date().toLocaleString('zh-CN', {
+            oldestCurrentOrder.time = new Date().toLocaleString('zh-TW', {
                 year: 'numeric',
                 month: '2-digit',
                 day: '2-digit',
@@ -589,6 +591,10 @@ function generateNewOrder() {
                 minute: '2-digit',
                 second: '2-digit'
             });
+            // 从原位置删除
+            allOrders.splice(oldestCurrentOrderIndex, 1);
+            // 插入到数组开头，使其作为最新的历史记录显示在第一条
+            allOrders.unshift(oldestCurrentOrder);
         }
     }
     
